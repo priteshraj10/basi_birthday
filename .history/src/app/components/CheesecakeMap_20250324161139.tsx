@@ -25,7 +25,7 @@ const Routing = ({ from, to }: { from: L.LatLng; to: L.LatLng }) => {
       if (typeof window !== 'undefined') {
         try {
           // Dynamically import the routing machine
-          await import('leaflet-routing-machine');
+          const routingMachine = await import('leaflet-routing-machine');
           
           if (routingControlRef.current) {
             map.removeControl(routingControlRef.current);
